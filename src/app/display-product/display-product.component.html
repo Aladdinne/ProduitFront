@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class ="search-box">
+  <input type ="text" class ="txt" [(ngModel)]="searchKeyword" placeholder ="Cherche ici..." (input)="Search(searchKeyword)">
+  <a class ="btn"><i class ="fa fa-search"></i></a>
+
+</div>
+<button type="submit" class="butt" [routerLink]="'/products/create'">
+  <i class="fa fa-plus"></i> Produit
+</button>
+<div class="container">
+
+  <div class="header">
+    <h1>Produits</h1>
+  </div>
+
+  <div class="products">
+  <div *ngFor="let prod of products" >
+    <div class="product" >
+      <div class="image">
+        <img src="assets/images/imag.jpeg" alt="">
+      </div>
+      <div class="namePrice">
+        <h3>{{prod.name}}</h3>
+        <span>$ {{prod.unitPrice}}</span>
+      </div>
+      <p>Quantité {{prod.quantity}} <br> {{prod.description}} </p>
+
+      <button type="button" class="trash-btn" (click)="Delete(prod.id)" >
+        <i class="fas fa-trash"></i></button>
+      <button type="button" class="edit-btn" routerLink="/edit/{{prod.id}}" >
+        <i class='fas fa-wrench' style='font-size:18px;color:white'></i></button>
+      <div class="bay">
+        <button> J'achète </button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="js/all.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

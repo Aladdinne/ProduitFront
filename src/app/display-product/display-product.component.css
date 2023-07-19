@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;900&family=Raleway:wght@100;300;500;700&display=swap');
+
+:root{
+  --bodyBack: rgba(119, 54, 63, 0.37);
+  --textColor: #1b2741;
+  --starColor: #f67034;
+  --sectionBack: #f7f6f9;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+body{
+  background-color: var(--bodyBack);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+.container{
+  width: 100%;
+  height:70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.header{
+  width: 100%;
+  text-align: center;
+}
+.header h1{
+  font-size: 4em;
+  text-transform: uppercase;
+  color: var(--textColor);
+}
+.products{
+  width: 100%;
+  align-self: center;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.product{
+  position: relative;
+  background-color: var(--sectionBack);
+  width: 280px;
+  height: 400px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;*/
+  padding: 20px 20px 40px;
+  border-radius: 10px;
+  transition: .3s;
+}
+.product:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.image{
+  width:100%;
+  height: 60%;
+  display: grid;
+  place-content: center;
+}
+.image img{
+  width: 240px;
+}
+.namePrice{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.namePrice h3{
+  font-size: 1.2em;
+  text-transform: capitalize;
+  color: var(--textColor);
+}
+.namePrice span{
+  font-size: 1.5em;
+  color: var(--starColor);
+}
+.product p{
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 25px;
+
+  overflow: auto;
+}
+.stars svg{
+  font-size: 1.3em;
+  color: var(--starColor);
+}
+.bay{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.bay button{
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: none;
+  background-color: var(--textColor);
+  color: var(--sectionBack);
+  font-size: 18px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .5s;
+}
+.bay button:hover{
+  transform: scale(1.1);
+}
+.trash-btn {
+  background-color: #f44336; /* Set your desired background color */
+  color: white; /* Set the text color */
+  border: none;
+  width: 15%;
+  height: 35px;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+.trash-btn:hover {
+  background-color: #d32f2f; /* Set your desired hover background color */
+}
+.edit-btn {
+  background-color: royalblue; /* Set your desired background color */
+  color: white; /* Set the text color */
+  border: none;
+  width: 15%;
+  height: 35px;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  position: absolute;
+  top: 47px;
+  left: 5px;
+}
+
+.edit-btn:hover {
+  background-color: darkblue; /* Set your desired hover background color */
+}
+.search-box{
+  position:absolute;
+  top:5%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#fff;
+  height:40px;
+  border-radius:40px;
+  padding:10px;
+
+}
+.search-box:hover > .txt{
+  width:300px;
+  padding:0 6px;
+  transition: all 1s;
+
+}
+.search-box:hover > .btn{
+  background:#07051a;
+
+}
+.btn{
+  color:#e84118;
+  float:right;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:0.4s;
+  cursor:pointer;
+
+
+}
+.btn > i{
+  font-size:30px;
+  color:#000;
+
+}
+
+.txt{
+  border:none;
+  background:none;
+  outline:none;
+  float:left;
+  padding:0;
+  color:#333;
+  font-size:16px;
+  transition:0.4s;
+  line-height:40px;
+  width:0px;
+  font-weight:bold;
+}
+.butt{
+  background-color: midnightblue; /* Set your desired background color */
+  color: white; /* Set the text color */
+  border: none;
+  width: 15vm;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+}
