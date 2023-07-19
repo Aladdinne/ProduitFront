@@ -1,0 +1,26 @@
+<!--< class="graph-container1">-->
+    <div class="header">
+
+    </div>
+
+    <div class="date-inputs">
+
+        <label for="startDate">Start date</label>
+        <input class="start"  type="date" id="startDate" [(ngModel)]="startDate">
+
+
+        <label for="endDate">End date</label>
+        <input class="start" type="date" id="endDate" [(ngModel)]="endDate">
+        <button class="init-button" (click)="HistoriqueDate()">Graphe</button>
+      </div>
+
+      <div class="graph-container">
+    <div class="chart-container">
+      <div class="loader" *ngIf="isLoading"></div>
+      <div class="chart" [chart]="chart"></div>
+    </div>
+</div>
+  <div>
+    <button class="page-button prev"  (click)="previousPage()" ><- Previous Page</button>
+    <button class="page-button" (click)="nextPage()" >Next Page -></button>
+  </div>

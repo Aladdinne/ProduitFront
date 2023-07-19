@@ -1,0 +1,127 @@
+<div class="right_col" role="main">
+  <div class="page-title">
+    <div class="title_left">
+      <h3>{{'Device List'|translate}}</h3>
+    </div>
+
+    <div class="title_right">
+      <div class="col-md-5 col-sm-5 form-group pull-right top_search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="{{ 'Search' | translate }}"
+                 [(ngModel)]="search" (input)="filterDevice()">>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">{{'Search!'|translate}}</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+
+          <button type="button" class="btn btn-primary float-right" routerLink="/device/add">
+            <i class="fa fa-plus"></i> {{'Add'|translate}}
+          </button>
+        </div>
+        <div class="card-body">
+
+
+          <!-- View Options -->
+
+
+
+          <!-- List View -->
+          <div>
+            <div class="table-responsive" style="max-height: 350px; /* Set the desired maximum height */
+  overflow-y: auto;">
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" id="check-all" class="flat" hidden>
+                  </th>
+                  <th>{{'Device ID'|translate}}</th>
+                  <th>{{'Nom'|translate}}</th>
+                  <th>{{'Description'|translate}}</th>
+                  <th>{{'Mac Adress'|translate}}</th>
+                  <th>{{'Admin'|translate}}</th>
+                  <th>{{'Client'|translate}}</th>
+                  <th>{{'active'|translate}}</th>
+
+
+
+                  <th style="border-left: #0b2e13 1px solid "></th>
+                  <th class="text-center">{{'Action'|translate}}</th>
+
+                  <th></th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let d of DeviceListe">
+                  <td>
+                    <input type="checkbox" class="flat" name="table_records">
+                  </td>
+                  <td>{{ d.deviceId  }}</td>
+                  <td>{{ d.nom }}/td>
+                  <td>{{ d.description }} </td>
+                  <td>{{ d.macAdress }}</td>
+                  <td>{{ d.idAdmin }}</td>
+                  <td> {{d.action}}</td>
+                  <td>
+                    <div *ngIf="d.active  == true; else elseBlock">
+                      <span class="badge badge-success">{{'Worked'|translate}} <i class="fa fa-check"></i></span>
+                    </div>
+                    <ng-template #elseBlock>
+                      <span class="badge badge-danger">{{'Problem'|translate}} <i class="fa fa-x"></i></span>
+                    </ng-template>
+                  </td>
+
+
+
+                  <td class="text-center" >
+
+                    <a href="/device/{{d.deviceId }}" class="btn btn-sm btn-success">
+                      {{'Details' |translate}} </a>
+                  </td>
+                  <td>
+                  <a href="/device/update/{{d.deviceId }}"  class="btn btn-sm btn-success">
+                    Update</a>
+                 </td>
+                 <td class="text-center">
+
+                   <a href="/graphe/{{d.deviceId }}"  class="btn btn-sm btn-success">
+                    Graphe</a>
+                 </td>
+                  <td>
+                    <button (click)="showDeviceLocation(d) " class="btn" style="padding: 0px 0px"><img class="icon" style="width: 30px;height: 25px" src="assets/images/marque-de-localisation.png"></button>
+                  </td>
+<!--                  <td [routerLink]="['/historique',d.deviceId]" class="btn btn-sm btn-success">Historique</td>-->
+                </tr>
+
+
+
+                </tbody>
+              </table>
+            </div>
+
+
+          </div>
+          <div class="map-container" leaflet [leafletOptions]="options">
+
+            <div class="map-frame">
+              <div id="map"></div>
+            </div>
+          </div>
+          <!-- Grid View -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
