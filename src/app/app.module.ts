@@ -9,6 +9,9 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login.component';
+import { RegistreAccountComponent } from './Registre/registre-account/registre-account.component';
+import { TopNavbarComponent } from './navbar/top-navbar/top-navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import {FormsModule} from "@angular/forms";
     CreerProduitComponent,
     DisplayProductComponent,
     EditProductComponent,
-    DeleteProductComponent
+    DeleteProductComponent,
+    LoginComponent,
+    RegistreAccountComponent,
+    TopNavbarComponent
   ],
   imports: [
     BrowserModule,
